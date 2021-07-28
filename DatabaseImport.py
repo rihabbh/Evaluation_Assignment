@@ -65,7 +65,7 @@ class DatabaseImport:
         :return:  Insert the product's data in the database
         """
 
-        db["Product"].create_index([("StockCode", 1)], name="StockCode", unique=True)
+        db["Product"].create_index([("StockCode", 1)], name="StockCode", unique=True) # Unique index
 
         dfProduct = dataset[['Description', 'StockCode']]
 
@@ -80,11 +80,14 @@ class DatabaseImport:
 
         product_dict = dfProduct.to_dict("records")
 
+        nbr_product = len(product_dict)
         for product in product_dict:
             try:
                 db["Product"].insert_one(product)
             except pymongo.errors.DuplicateKeyError as e:
-                pass
+                nbr_product -= 1
+
+        print(nbr_product, " product(s) inserted")
 
 
     ## Preparing Transaction Collection
@@ -102,13 +105,14 @@ class DatabaseImport:
         transaction_dict = dfTransaction.to_dict("records")
 
         db["Transaction"].insert_many(transaction_dict)
+        print(len(transaction_dict), " transaction(s) inserted ")
 
 
 if __name__ == "__main__":
     print(datetime.now(tz=None), ' Starting ! ')
     #### Command Line Arguments
     parser = OptionParser()
-    parser.add_option("-h", "--host", dest="dbHost", default="localhost", help="MongoDB Host")
+    parser.add_option("-u", "--host", dest="dbHost", default="localhost", help="MongoDB Host")
     parser.add_option("-p", "--port", dest="dbPort", default="27017", help="MongoDB Host")
     parser.add_option("-d", "--db", dest="dbName", default='Retail', help="Database Name")
     parser.add_option("-e", "--excel", dest="excelPath", default='Online Retail.xlsx', help="temperature threehold")
