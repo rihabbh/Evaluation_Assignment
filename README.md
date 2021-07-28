@@ -11,13 +11,13 @@ attributes of the mongodb url
 According to the python configuration, it can be executed with this command
 
 ```
-py DatabaseImport.py -h [MONGOHOST] - p [MONGOPORT] -d [DBNAME] -e [EXCELPATH]
+py DatabaseImport.py -u [MONGOHOST] - p [MONGOPORT] -d [DBNAME] -e [EXCELPATH]
 ```
 
 or this:
 
 ```
-python DatabaseImport.py -h [MONGOHOST] - p [MONGOPORT] -d [DBNAME] -e [EXCELPATH]
+python DatabaseImport.py -u [MONGOHOST] - p [MONGOPORT] -d [DBNAME] -e [EXCELPATH]
 ```
 
 
