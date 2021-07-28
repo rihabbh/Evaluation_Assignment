@@ -31,6 +31,44 @@ python DatabaseImport.py -h [MONGOHOST] - p [MONGOPORT] -d [DBNAME] -e [EXCELPAT
 | -d or --db   | Database's Name                            | Retail|
 | "-e" or "--excel" | path to the Excel's file with the data| Online Retail.xlsx|
 
+
+### The database
+
+The database created includes 2 collections :
+
+"Transaction" , where documents have this structure:
+
+```
+{
+    "_id": {
+        "$oid": "60fdde43134652833b8b4928"
+    },
+    "InvoiceNo": 536365,
+    "StockCode": "85123a",
+    "Quantity": 6,
+    "InvoiceDate": {
+        "$date": "2010-12-01T08:26:00.000Z"
+    },
+    "UnitPrice": 2.55,
+    "CustomerID": 17850,
+    "Country": "United Kingdom"
+}
+```
+
+and "Product", with this : 
+
+```
+{
+    "_id": {
+        "$oid": "60fdde3d134652833b8b39b5"
+    },
+    "StockCode": "10123c",
+    "Description": "hearts wrapping tape ",
+    "ProductCode": "10123"
+}
+```
+
+
 ## DatabaseImportTest.py
 
 
