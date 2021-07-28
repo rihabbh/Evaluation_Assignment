@@ -108,9 +108,9 @@ if __name__ == "__main__":
     print(datetime.now(tz=None), ' Starting ! ')
     #### Command Line Arguments
     parser = OptionParser()
-    parser.add_option("-u", "--host", dest="dbHost", default="localhost", help="MongoDB Host")
+    parser.add_option("-h", "--host", dest="dbHost", default="localhost", help="MongoDB Host")
     parser.add_option("-p", "--port", dest="dbPort", default="27017", help="MongoDB Host")
-    parser.add_option("-d", "--db", dest="dbName", default='TestRetail', help="Database Name")
+    parser.add_option("-d", "--db", dest="dbName", default='Retail', help="Database Name")
     parser.add_option("-e", "--excel", dest="excelPath", default='Online Retail.xlsx', help="temperature threehold")
 
     (options, args) = parser.parse_args()

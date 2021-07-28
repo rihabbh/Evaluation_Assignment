@@ -1,0 +1,11 @@
+python 3
+pandas
+numpy
+pymongo
+mongomock
+sklearn
+nltk
+matplotlib
+plotly
+ipywidgets
+xlrd==1.2.0
