@@ -29,7 +29,7 @@ python DatabaseImport.py -h [MONGOHOST] - p [MONGOPORT] -d [DBNAME] -e [EXCELPAT
 | -u or --host | MONGODB host                               |localhost|
 | -p or --port | MONDOBD port                               | 27017|
 | -d or --db   | Database's Name                            | Retail|
-| "-e" or "--excel" | path to the Excel's file with the data| Online Retail.xlsx|
+| -e or --excel | path to the Excel's file with the data| Online Retail.xlsx|
 
 
 ### The database
