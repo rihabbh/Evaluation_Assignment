@@ -49,11 +49,11 @@ python DatabaseImportTest.py
 ```
 
 
-##Assignment.ipynb
+## Assignment.ipynb
 
 Jupyter Notebook containing the answers to all the questions except the last one.
 
-##Categorization.ipynb
+## Categorization.ipynb
 
 Jupyter Notebook containing the answer to the last question.
 
